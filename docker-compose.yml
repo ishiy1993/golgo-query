@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+    es:
+        image: ishiy1993/elasticsearch-ja:latest
+        ports:
+            - "9200:9200"
+        volumes:
+            - ./es-data:/usr/share/elasticsearch/data
+
+    lein:
+        image: ishiy1993/lein
+        depends_on:
+            - es
+        ports:
+            - "3333:3333"
+            - "3000:3000"
+        volumes:
+            - ./backend:/work
+            - ./frontend/build:/work/public
+        working_dir: /work
+        user: "1000:100"
