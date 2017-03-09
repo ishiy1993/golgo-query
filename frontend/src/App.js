@@ -56,19 +56,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {value: "", loading: false, episodes: []};
-    this.handleChange = this.handleChange.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({value: e.target.value});
-  }
-
   handleInput(e) {
-    const v = this.state.value;
-    if(e.key === "Enter" && v.length !== 0) {
-      console.log(e.key, v);
-      this.setState({loading: true});
+    if(e.key === "Enter") {
+      const v = e.target.value;
+      if(v.length === 0) { return; }
+      this.setState({loading: true, value: v});
       search(v, (res) => {
         this.setState({loading: false, episodes: res});
       }, (err) => {
@@ -90,15 +85,19 @@ class App extends Component {
 
     if (loading) {
       content = (
-        <p>Loading</p>
+        <div className="info">
+          <p>Loading</p>
+        </div>
       );
     } else if (epis.length === 0 && value.length !== 0) {
       content = (
-        <p>Nothing</p>
+        <div className="info">
+          <p>Nothing</p>
+        </div>
       );
     } else if (epis.length === 0) {
       content = (
-        <div className="episode">
+        <div className="info">
           <h2>Welcome to Golgo Query</h2>
           <p>Enter a keyword and press enter key</p>
         </div>
@@ -118,7 +117,7 @@ class App extends Component {
         </div>
         <div className="App-main">
           <div className="App-form">
-            <input type="text" onChange={this.handleChange} onKeyPress={this.handleInput} />
+            <input type="text" onKeyPress={this.handleInput} />
           </div>
           <div className="App-content">
             {content}
