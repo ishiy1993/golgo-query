@@ -123,6 +123,10 @@ class App extends Component {
             {content}
           </div>
         </div>
+        <div className="App-footer">
+          <p>Copyright (c) 2017, ishiy</p>
+          <p>このサービスの情報はCC-BY-SA 3.0で配布されている<a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B4%E3%83%AB%E3%82%B413%E3%81%AE%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%E4%B8%80%E8%A6%A7&oldid=60657089">Wikipediaの情報</a>をもとにしています。</p>
+        </div>
       </div>
     );
   }

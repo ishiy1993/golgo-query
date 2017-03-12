@@ -50,3 +50,9 @@
   margin: 10px;
   line-height: 1.5em;
 }
+
+.App-footer {
+  width: 100%;
+  color: #aaa;
+  font-size: smaller;
+}
