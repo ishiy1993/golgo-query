@@ -18,6 +18,10 @@
   margin: 20px 0;
 }
 
+.App-main {
+  margin-bottom: 65px;
+}
+
 .App-content {
   margin: 0 auto;
   max-width: 600px;
@@ -55,4 +59,6 @@
   width: 100%;
   color: #aaa;
   font-size: smaller;
+  position: absolute;
+  bottom: 0;
 }
