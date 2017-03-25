@@ -2,6 +2,7 @@
   (:require [compojure.core :refer [routes defroutes POST]]
             [compojure.route :as route]
             [ring.middleware.file :refer [file-request]]
+            [ring.logger :as logger]
             [ring.adapter.jetty :as server]
             [backend.search :refer [search]]))
 
@@ -15,9 +16,10 @@
 (defonce server (atom nil))
 
 (def app
-  (routes
-    search-routes
-    static-routes))
+  (logger/wrap-with-logger
+    (routes
+      search-routes
+      static-routes)))
 
 (defn start-server []
   (when-not @server
