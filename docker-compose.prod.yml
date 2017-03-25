@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+    es:
+        image: ishiy1993/elasticsearch-ja:latest
+        ports:
+            - "9200:9200"
+        volumes:
+            - ./es-data:/usr/share/elasticsearch/data
+
+    golgo-query:
+        image: ishiy1993/golgo-query
+        depends_on:
+            - es
+        ports:
+            - "3000:3000"

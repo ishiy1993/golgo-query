@@ -1,0 +1,11 @@
+README.md
+docker-compose.yml
+scraping/
+backend/?/
+backend/doc/
+backend/resources/
+backend/src/
+backend/test/
+frontend/node_modules/
+frontend/src/
+frontend/public/
