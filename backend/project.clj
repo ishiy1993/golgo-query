@@ -8,5 +8,6 @@
                  [org.clojure/data.json "0.2.6"]
                  [clojurewerkz/elastisch "2.2.2"]
                  [ring "1.5.1"]
+                 [ring-logger "0.7.7"]
                  [ring/ring-json "0.4.0"]
                  [compojure "1.5.2"]])
