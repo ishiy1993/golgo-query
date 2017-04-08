@@ -3,7 +3,7 @@ import './App.css';
 
 function search(word, onSuccess, onError) {
   let xhr = new XMLHttpRequest();
-  xhr.open('POST', '/search', true);
+  xhr.open('POST', '/services/golgo/search', true);
   xhr.setRequestHeader("Accept","application/json");
   xhr.setRequestHeader("Content-Type","application/json");
   xhr.onreadystatechange = function (e) {
