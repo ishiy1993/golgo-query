@@ -2,7 +2,7 @@ version: "3"
 
 services:
     es:
-        image: ishiy1993/elasticsearch-ja:latest
+        image: ishiy1993/docker-elasticsearch-ja:latest
         ports:
             - "9200:9200"
         volumes:
